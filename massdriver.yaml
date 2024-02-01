@@ -1,0 +1,56 @@
+schema: draft-07
+name: "gcp-gcs-bucket-application-assets"
+description: "Google Cloud Storage (GCS)  is designed for optimal performance with unstructured data. This storage solution is ideal for storing any files produced and consumed by your application internally on the Google Cloud Platform."
+source_url: github.com/massdriver-cloud/gcp-gcs-bucket-application-assets
+access: public
+type: infrastructure
+
+params:
+  examples: []
+  required:
+    - bucket
+  properties:
+    bucket:
+      type: object
+      title: Bucket
+      required:
+        - region
+        - force_destroy
+      properties:
+        region:
+          title: Region
+          description: GCP region where the bucket will be created.
+          $ref: https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/main/definitions/types/gcp-region.json
+          $md.immutable: true
+        force_destroy:
+          title: Enable force destroy of bucket
+          description: When enabled, the bucket and all objects within it are destroyed when the bundle is decommissioned.
+          default: false
+          type: boolean
+
+connections:
+  required:
+    - gcp_authentication
+  properties:
+    gcp_authentication:
+      $ref: massdriver/gcp-service-account
+
+artifacts:
+  required:
+    - gcs_bucket
+  properties:
+    gcs_bucket:
+      $ref: massdriver/gcp-gcs-bucket
+
+ui:
+  ui:order:
+    - bucket
+    - "*"
+  bucket:
+    ui:order:
+      - region
+      - force_destroy
+      - "*"
+    region:
+      ui:field: supportedCloudLocationsDropdown
+      cloudService: gcp
