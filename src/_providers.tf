@@ -9,14 +9,6 @@ terraform {
       source  = "hashicorp/google"
       version = "~> 4.0"
     }
-    google-beta = {
-      source  = "hashicorp/google-beta"
-      version = "~> 4.0"
-    }
-    null = {
-      source  = "hashicorp/null"
-      version = "~> 3.0"
-    }
   }
 }
 
@@ -25,12 +17,6 @@ locals {
 }
 
 provider "google" {
-  project     = local.gcp_project_id
-  credentials = jsonencode(var.gcp_authentication.data)
-  region      = var.bucket.region
-}
-
-provider "google-beta" {
   project     = local.gcp_project_id
   credentials = jsonencode(var.gcp_authentication.data)
   region      = var.bucket.region
