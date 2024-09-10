@@ -17,7 +17,7 @@ Google Cloud Storage (GCS)  is designed for optimal performance with unstructure
 
 ## Design
 
-For detailed information, check out our [Operator Guide](operator.mdx) for this bundle.
+For detailed information, check out our [Operator Guide](operator.md) for this bundle.
 
 ## Usage
 
@@ -37,42 +37,8 @@ Form input parameters for configuring a bundle for deployment.
 <summary>View</summary>
 
 <!-- PARAMS:START -->
-## Properties
 
-- **`bucket`** *(object)*
-  - **`force_destroy`** *(boolean)*: When enabled, the bucket and all objects within it are destroyed when the bundle is decommissioned. Default: `False`.
-  - **`region`** *(string)*: GCP region where the bucket will be created.
-
-    Examples:
-    ```json
-    "us-east1"
-    ```
-
-    ```json
-    "us-east4"
-    ```
-
-    ```json
-    "us-west1"
-    ```
-
-    ```json
-    "us-west2"
-    ```
-
-    ```json
-    "us-west3"
-    ```
-
-    ```json
-    "us-west4"
-    ```
-
-    ```json
-    "us-central1"
-    ```
-
-## Examples
+**Params coming soon**
 
 <!-- PARAMS:END -->
 
@@ -86,103 +52,8 @@ Connections from other bundles that this bundle depends on.
 <summary>View</summary>
 
 <!-- CONNECTIONS:START -->
-## Properties
 
-- **`gcp_authentication`** *(object)*: GCP Service Account. Cannot contain additional properties.
-  - **`data`** *(object)*
-    - **`auth_provider_x509_cert_url`** *(string)*: Auth Provider x509 Certificate URL. Default: `https://www.googleapis.com/oauth2/v1/certs`.
-
-      Examples:
-      ```json
-      "https://example.com/some/path"
-      ```
-
-      ```json
-      "https://massdriver.cloud"
-      ```
-
-    - **`auth_uri`** *(string)*: Auth URI. Default: `https://accounts.google.com/o/oauth2/auth`.
-
-      Examples:
-      ```json
-      "https://example.com/some/path"
-      ```
-
-      ```json
-      "https://massdriver.cloud"
-      ```
-
-    - **`client_email`** *(string)*: Service Account Email.
-
-      Examples:
-      ```json
-      "jimmy@massdriver.cloud"
-      ```
-
-      ```json
-      "service-account-y@gmail.com"
-      ```
-
-    - **`client_id`** *(string)*: .
-    - **`client_x509_cert_url`** *(string)*: Client x509 Certificate URL.
-
-      Examples:
-      ```json
-      "https://example.com/some/path"
-      ```
-
-      ```json
-      "https://massdriver.cloud"
-      ```
-
-    - **`private_key`** *(string)*: .
-    - **`private_key_id`** *(string)*: .
-    - **`project_id`** *(string)*: .
-    - **`token_uri`** *(string)*: Token URI. Default: `https://oauth2.googleapis.com/token`.
-
-      Examples:
-      ```json
-      "https://example.com/some/path"
-      ```
-
-      ```json
-      "https://massdriver.cloud"
-      ```
-
-    - **`type`** *(string)*: . Default: `service_account`.
-  - **`specs`** *(object)*
-    - **`gcp`** *(object)*: .
-      - **`project`** *(string)*
-      - **`region`** *(string)*: The GCP region to provision resources in.
-
-        Examples:
-        ```json
-        "us-east1"
-        ```
-
-        ```json
-        "us-east4"
-        ```
-
-        ```json
-        "us-west1"
-        ```
-
-        ```json
-        "us-west2"
-        ```
-
-        ```json
-        "us-west3"
-        ```
-
-        ```json
-        "us-west4"
-        ```
-
-        ```json
-        "us-central1"
-        ```
+**Connections coming soon**
 
 <!-- CONNECTIONS:END -->
 
@@ -196,90 +67,8 @@ Resources created by this bundle that can be connected to other bundles.
 <summary>View</summary>
 
 <!-- ARTIFACTS:START -->
-## Properties
 
-- **`gcs_bucket`** *(object)*: GCP Google Cloud Storage Bucket.
-  - **`data`** *(object)*
-    - **`infrastructure`** *(object)*: Google Cloud Storage Bucket. Cannot contain additional properties.
-      - **`id`** *(string)*: The Globally Unique ID of the GCS Bucket.
-
-        Examples:
-        ```json
-        "one"
-        ```
-
-        ```json
-        "dash-bucket"
-        ```
-
-        ```json
-        "snake_bucket"
-        ```
-
-        ```json
-        "domain.type.bucket"
-        ```
-
-        ```json
-        "1also-valid2"
-        ```
-
-    - **`security`** *(object)*: GCP Security Configuration. Cannot contain additional properties.
-      - **`iam`** *(object)*: IAM Roles And Conditions. Cannot contain additional properties.
-        - **`^[a-z]+[a-z_]*[a-z]$`** *(object)*
-          - **`condition`** *(string)*: GCP IAM Condition.
-          - **`role`**: GCP Role.
-
-            Examples:
-            ```json
-            "roles/owner"
-            ```
-
-            ```json
-            "roles/redis.editor"
-            ```
-
-            ```json
-            "roles/storage.objectCreator"
-            ```
-
-            ```json
-            "roles/storage.legacyObjectReader"
-            ```
-
-  - **`specs`** *(object)*
-    - **`gcp`** *(object)*: .
-      - **`project`** *(string)*
-      - **`region`** *(string)*: The GCP region to provision resources in.
-
-        Examples:
-        ```json
-        "us-east1"
-        ```
-
-        ```json
-        "us-east4"
-        ```
-
-        ```json
-        "us-west1"
-        ```
-
-        ```json
-        "us-west2"
-        ```
-
-        ```json
-        "us-west3"
-        ```
-
-        ```json
-        "us-west4"
-        ```
-
-        ```json
-        "us-central1"
-        ```
+**Artifacts coming soon**
 
 <!-- ARTIFACTS:END -->
 
