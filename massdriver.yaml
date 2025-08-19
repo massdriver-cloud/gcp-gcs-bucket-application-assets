@@ -3,7 +3,6 @@ name: gcp-gcs-bucket-application-assets
 version: 1.0.0
 description: Google Cloud Storage (GCS)  is designed for optimal performance with unstructured data. This storage solution is ideal for storing any files produced and consumed by your application internally on the Google Cloud Platform.
 source_url: https://github.com/massdriver-cloud/gcp-gcs-bucket-application-assets
-type: application
 params:
   examples: []
   required:
