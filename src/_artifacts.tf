@@ -31,8 +31,7 @@ locals {
 }
 
 resource "massdriver_artifact" "gcs_bucket" {
-  field                = "gcs_bucket"
-  provider_resource_id = google_storage_bucket.main.id
-  name                 = "GCS Bucket ${var.md_metadata.name_prefix} ${google_storage_bucket.main.id}"
-  artifact             = jsonencode(local.artifact_static_bucket)
+  field    = "gcs_bucket"
+  name     = "GCS Bucket ${var.md_metadata.name_prefix} ${google_storage_bucket.main.id}"
+  artifact = jsonencode(local.artifact_static_bucket)
 }
