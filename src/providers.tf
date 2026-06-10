@@ -13,11 +13,11 @@ terraform {
 }
 
 locals {
-  gcp_project_id = var.gcp_authentication.data.project_id
+  gcp_project_id = var.gcp_authentication.project_id
 }
 
 provider "google" {
   project     = local.gcp_project_id
-  credentials = jsonencode(var.gcp_authentication.data)
+  credentials = jsonencode(var.gcp_authentication)
   region      = var.bucket.region
 }
