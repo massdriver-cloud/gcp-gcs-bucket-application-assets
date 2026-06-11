@@ -1,8 +1,8 @@
 locals {
-  data_infrastructure = {
-    id  = google_storage_bucket.main.name
+  infrastructure = {
+    id = google_storage_bucket.main.name
   }
-  data_security = {
+  security = {
     iam = {
       read = {
         role      = "roles/storage.objectViewer"
@@ -20,10 +20,8 @@ locals {
   }
 
   artifact_static_bucket = {
-    data = {
-      infrastructure = local.data_infrastructure
-      security       = local.data_security
-    }
+    infrastructure = local.infrastructure
+    security       = local.security
     specs = {
       gcp = local.specs_gcp
     }
